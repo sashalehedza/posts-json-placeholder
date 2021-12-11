@@ -149,11 +149,17 @@ const App = () => {
         <h3>Loading Posts</h3>
       ) : (
         <>
-          <PostList
-            posts={filteredList}
-            visiblePosts={postsPerPage}
-            handleClick={handleClick}
-          />
+          <PostList posts={filteredList} visiblePosts={postsPerPage} />
+          <button
+            style={{
+              marginBottom: '20px',
+              display: postsPerPage >= filteredList.length ? 'none' : 'block',
+            }}
+            type='button'
+            onClick={handleClick}
+          >
+            Load more
+          </button>
         </>
       )}
     </div>
