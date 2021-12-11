@@ -10,13 +10,17 @@ const PostList = ({ posts, visiblePosts, handleClick }) => {
       {posts.slice(0, visiblePosts).map((post) => (
         <PostItem post={post} key={post.id} />
       ))}
-      <button
-        style={{ marginBottom: '20px' }}
-        type='button'
-        onClick={handleClick}
-      >
-        See more
-      </button>
+      {posts.length ? (
+        <button
+          style={{ marginBottom: '20px' }}
+          type='button'
+          onClick={handleClick}
+        >
+          See more
+        </button>
+      ) : (
+        ''
+      )}
     </div>
   )
 }

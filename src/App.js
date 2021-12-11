@@ -154,13 +154,6 @@ const App = () => {
             visiblePosts={postsPerPage}
             handleClick={handleClick}
           />
-          {/* <button
-            style={{ marginBottom: '20px' }}
-            type='button'
-            onClick={handleClick}
-          >
-            See more
-          </button> */}
         </>
       )}
     </div>
