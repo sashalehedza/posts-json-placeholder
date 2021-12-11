@@ -12,3 +12,5 @@ npm start
 - API usage
 - Filtering posts
 - Pagination
+
+## Developed by SL :)
