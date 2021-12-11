@@ -17,9 +17,11 @@ const App = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       setLoading(true)
-      const res = await getPosts()
-      setPosts(res.data)
-      setLoading(false)
+      setTimeout(async () => {
+        const res = await getPosts()
+        setPosts(res.data)
+        setLoading(false)
+      }, 1000)
     }
 
     fetchPosts()
@@ -142,14 +144,24 @@ const App = () => {
           { value: 'ea', name: 'ea' },
         ]}
       />
-
-      {filteredList.length ? (
+      {loading ? (
+        <h3>Loading Data</h3>
+      ) : (
         <>
-          <PostList
-            posts={filteredList}
-            visiblePosts={postsPerPage}
-            loading={loading}
-          />
+          <PostList posts={filteredList} visiblePosts={postsPerPage} />
+          <button
+            style={{ marginBottom: '20px' }}
+            type='button'
+            onClick={handleClick}
+          >
+            See more
+          </button>
+        </>
+      )}
+
+      {/* {filteredList.length ? (
+        <>
+          <PostList posts={filteredList} visiblePosts={postsPerPage} />
           <button
             style={{ marginBottom: '20px' }}
             type='button'
@@ -160,7 +172,7 @@ const App = () => {
         </>
       ) : (
         <h3>There are no posts that would fit selected filters</h3>
-      )}
+      )} */}
     </div>
   )
 }
