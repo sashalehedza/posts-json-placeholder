@@ -150,7 +150,11 @@ const App = () => {
             visiblePosts={postsPerPage}
             loading={loading}
           />
-          <button type='button' onClick={handleClick}>
+          <button
+            style={{ marginBottom: '20px' }}
+            type='button'
+            onClick={handleClick}
+          >
             See more
           </button>
         </>
