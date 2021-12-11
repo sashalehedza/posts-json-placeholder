@@ -144,35 +144,25 @@ const App = () => {
           { value: 'ea', name: 'ea' },
         ]}
       />
+
       {loading ? (
-        <h3>Loading Data</h3>
+        <h3>Loading Posts</h3>
       ) : (
         <>
-          <PostList posts={filteredList} visiblePosts={postsPerPage} />
-          <button
+          <PostList
+            posts={filteredList}
+            visiblePosts={postsPerPage}
+            handleClick={handleClick}
+          />
+          {/* <button
             style={{ marginBottom: '20px' }}
             type='button'
             onClick={handleClick}
           >
             See more
-          </button>
+          </button> */}
         </>
       )}
-
-      {/* {filteredList.length ? (
-        <>
-          <PostList posts={filteredList} visiblePosts={postsPerPage} />
-          <button
-            style={{ marginBottom: '20px' }}
-            type='button'
-            onClick={handleClick}
-          >
-            See more
-          </button>
-        </>
-      ) : (
-        <h3>There are no posts that would fit selected filters</h3>
-      )} */}
     </div>
   )
 }
